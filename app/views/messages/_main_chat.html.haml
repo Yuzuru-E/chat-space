@@ -1,0 +1,37 @@
+.Chat-main
+  .Chat-main__group-info 
+    .Chat-main__group-info-content
+      .Chat-main__group-info-content__user-name test
+      %p.Chat-main__group-info-content__member Member : masa
+    .Chat-main__group-info__edit
+      = link_to "#", class: "Chat-main__btn" do 
+        %p Edit
+  .Chat-main__message-list 
+    .Chat-main__message
+      .Chat-main__message-title
+        %p.Chat-main__message-user masa
+        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
+      %p.Chat-main__message-content おはよう！
+    .Chat-main__message
+      .Chat-main__message-title
+        %p.Chat-main__message-user masa
+        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
+      %p.Chat-main__message-content おはよう！
+    .Chat-main__message
+      .Chat-main__message-title
+        %p.Chat-main__message-user masa
+        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
+      %p.Chat-main__message-content おはよう！
+    .Chat-main__message
+      .Chat-main__message-title
+        %p.Chat-main__message-user masa
+        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
+      %p.Chat-main__message-content おはよう！
+  .Form
+    %form.Form__contents
+      .Form__input-box
+        %input.Form__input-text{"placeholder": "type a message", "type": "text"}
+          %label{class: "Form__input-image"}
+            = icon('far', 'image')
+            %input{type: "file"}
+      %input.Form__submit-btn{"value": "Send", "type": "submit"}
