@@ -41,11 +41,13 @@
       width: 60px;
       justify-content: flex-end;
       display: flex;
-      .Side-bar__btn {
-        margin-left: 5px;
+      .icon {
         @include -color-white();
       }
     }
+  }
+  &__btn {
+    margin-left: 5px;
   }
   &__group-list {
     overflow: scroll;
