@@ -58,3 +58,5 @@ gem "haml-rails", "~> 2.0"
 gem 'font-awesome-sass'
 
 gem 'devise'
+
+gem 'pry-rails'
