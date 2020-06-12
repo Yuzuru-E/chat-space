@@ -1,37 +1,20 @@
 .Chat-main
   .Chat-main__group-info 
     .Chat-main__group-info-content
-      .Chat-main__group-info-content__user-name test
-      %p.Chat-main__group-info-content__member Member : masa
+      .Chat-main__group-info-content__user-name 
+        = @group[:name]
+      %p.Chat-main__group-info-content__member
+        = "Member：" + @group.users.pluck(:name).join(" ")
     .Chat-main__group-info__edit
-      = link_to edit_group_path(current_user), class: "Chat-main__btn" do 
+      = link_to edit_group_path(@group), class: "Chat-main__btn" do 
         %p Edit
   .Chat-main__message-list 
-    .Chat-main__message
-      .Chat-main__message-title
-        %p.Chat-main__message-user masa
-        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
-      %p.Chat-main__message-content おはよう！
-    .Chat-main__message
-      .Chat-main__message-title
-        %p.Chat-main__message-user masa
-        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
-      %p.Chat-main__message-content おはよう！
-    .Chat-main__message
-      .Chat-main__message-title
-        %p.Chat-main__message-user masa
-        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
-      %p.Chat-main__message-content おはよう！
-    .Chat-main__message
-      .Chat-main__message-title
-        %p.Chat-main__message-user masa
-        %p.Chat-main__message-timestamp 2020/06/07(Wed) 17:00:00
-      %p.Chat-main__message-content おはよう！
-  .Form
-    %form.Form__contents
-      .Form__input-box
-        %input.Form__input-text{"placeholder": "type a message", "type": "text"}
-          %label{class: "Form__input-image"}
-            = icon('far', 'image')
-            %input{type: "file"}
-      %input.Form__submit-btn{"value": "Send", "type": "submit"}
+    = render @messages
+  .Footer
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'

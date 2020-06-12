@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.Wrapper {
   display: flex;
   height: 100vh;
 }
@@ -25,7 +25,6 @@
   width: 300px;
   @include -color-white();
   &__user-name {
-    font-weight: bold;
     background-color: #253141;
     height: 100px;
     display: flex;
@@ -37,12 +36,17 @@
     height: 20px;
     font-size: 16px;
     @include -flex-between();
+    h3 {
+      font-weight: bold;
+    }
     &__icons{
       width: 60px;
       justify-content: flex-end;
       display: flex;
       .icon {
+        line-height: 25px;
         @include -color-white();
+        font-size: 16px;
       }
     }
   }
@@ -109,15 +113,13 @@
   &__message-list {
     background-color:#fafafa;
     height: calc(100vh - 100px - 90px);
-    padding-top: 35px;
+    padding: 35px 40px 0;
     overflow: scroll;
   }
   &__message {
-    padding: 0 0 46px 40px;
+  display: flex;
   }
   &__message-title {
-    display: flex;
-    padding-bottom: 12px;
   }
   &__message-user {
     color: #333;
@@ -130,39 +132,41 @@
     font-size: 12px;
   }
   &__message-content {
+    margin-top: 12px;
     color: #434A54;
     font-size: 14px;
   }
-  .Form {
+  .Footer {
     background-color: #ddd;
     height: 90px;
     padding: 20px 50px 20px 40px;
     box-sizing: border-box;
+  }
+  .Form {
+    @include -flex-between();
     &__contents {
-      @include -flex-between();
-    }
-    &__input-box {
       width:100%;
-      @include -back-white();
       position: relative;
     }
-    &__input-text {
+    // &__input-box {
+      // }
+    &__inputContent {
       width: 100%;
       height:50px;
       border: none;
       padding: 0 45px 0 15px;
     }
-    &__input-image {
+    &__inputImage {
       height: 50px;
       position: absolute;
       right: 10px;
       line-height:  50px;
       font-size: 25px;
-      input {
+      .Hidden {
         display: none;
       }
     }
-    &__submit-btn {
+    &__submit {
       margin-left: 15px;
       height: 50px;
       padding: 0 30px;
