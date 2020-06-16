@@ -8,7 +8,7 @@
     .Chat-main__group-info__edit
       = link_to edit_group_path(@group), class: "Chat-main__btn" do 
         %p Edit
-  .Chat-main__message-list 
+  .Chat-main__message-list
     = render @messages
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
