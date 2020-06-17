@@ -116,6 +116,9 @@
     padding: 35px 40px 0;
     overflow: scroll;
   }
+  &__message-box {
+    margin-bottom: 46px;
+  }
   &__message {
   display: flex;
   }
@@ -133,7 +136,6 @@
     margin-top: 12px;
     color: #434A54;
     font-size: 14px;
-    margin-bottom: 46px;
   }
   .Footer {
     background-color: #ddd;
